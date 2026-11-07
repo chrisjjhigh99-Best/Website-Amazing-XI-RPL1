@@ -1,0 +1,220 @@
+body {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  color: var(--ink);
+  background-color: var(--bg);
+  overflow-x: hidden;
+  overflow-x: clip;
+}
+
+html {
+  overflow-x: clip;
+}
+
+body.is-locked {
+  overflow: hidden;
+}
+
+::selection {
+  background: var(--magenta);
+  color: var(--bg);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--police-red), var(--police-blue));
+  border-radius: 10px;
+}
+
+main {
+  position: relative;
+  z-index: 2;
+}
+
+.container {
+  width: min(1180px, 100% - 2.5rem);
+  margin-inline: auto;
+}
+
+.container--wide {
+  width: min(1340px, 100% - 2.5rem);
+}
+
+.section {
+  position: relative;
+  padding-block: var(--space-10);
+}
+
+.section__head {
+  max-width: 720px;
+  margin-bottom: var(--space-7);
+}
+
+.section__tag {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.25em;
+  color: var(--magenta);
+  margin-bottom: var(--space-3);
+}
+
+.section__title {
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: #fff;
+  text-shadow: 0 0 18px rgba(0, 240, 255, 0.35);
+  margin-bottom: var(--space-4);
+}
+
+.section__lead {
+  font-size: var(--text-lg);
+  color: var(--ink-dim);
+  max-width: 60ch;
+}
+
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: 0.95rem 1.7rem;
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  clip-path: var(--cut-sm);
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease), background 0.3s var(--ease), color 0.3s var(--ease);
+}
+
+.btn--primary {
+  background: var(--cyan);
+  color: var(--bg);
+  box-shadow: var(--glow-cyan);
+}
+
+.btn--primary:hover {
+  background: var(--yellow);
+  transform: translateY(-2px);
+}
+
+.btn--ghost {
+  color: var(--cyan);
+  background: rgba(0, 240, 255, 0.08);
+  border: 1px solid var(--line-strong);
+}
+
+.btn--ghost:hover {
+  background: rgba(255, 43, 214, 0.15);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.btn:focus-visible,
+.filter__btn:focus-visible,
+.ide__btn:focus-visible,
+.ide__tab:focus-visible,
+.navbar__link:focus-visible {
+  outline: 2px solid var(--yellow);
+  outline-offset: 3px;
+}
+
+.caret {
+  display: inline-block;
+  width: 0.6ch;
+  height: 1.1em;
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  background: var(--cyan);
+  box-shadow: var(--glow-cyan);
+  animation: caretBlink 0.9s steps(1) infinite;
+}
+
+.caret--block {
+  width: 0.55em;
+  height: 1.15em;
+  background: var(--magenta);
+  box-shadow: var(--glow-magenta);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
+  transition-delay: calc(var(--i, 0) * 70ms);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.no-js .reveal {
+  opacity: 1;
+  transform: none;
+}
+
+.tape {
+  position: relative;
+  z-index: 3;
+  overflow: hidden;
+  background: var(--yellow);
+  color: #0a0a0a;
+  transform: rotate(-1.6deg) scale(1.04);
+  border-block: 4px solid #0a0a0a;
+  box-shadow: 0 10px 40px rgba(255, 225, 77, 0.25);
+}
+
+.tape--reverse {
+  transform: rotate(1.4deg) scale(1.04);
+}
+
+.tape__track {
+  display: flex;
+  width: max-content;
+  animation: tapeMove 28s linear infinite;
+}
+
+.tape--reverse .tape__track {
+  animation-direction: reverse;
+}
+
+.tape__track span {
+  flex-shrink: 0;
+  padding: 0.7rem 0;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: var(--text-sm);
+  letter-spacing: 0.2em;
+  white-space: pre;
+}
+
+@keyframes caretBlink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  50.01%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes tapeMove {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

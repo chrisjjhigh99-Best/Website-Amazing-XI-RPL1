@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html lang="id" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Website resmi kelas XI RPL 1 SMK Negeri 1 Sampit - Neo Sampit Cyber Division">
+  <title>XI RPL 1 // SMKN 1 Sampit - Neo Sampit Cyber Division</title>
+  <link rel="icon" type="image/svg+xml" href="assets/img/ikon/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Special+Elite&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/city.css">
+  <link rel="stylesheet" href="assets/css/navbar.css">
+  <link rel="stylesheet" href="assets/css/hero.css">
+  <link rel="stylesheet" href="assets/css/sections.css">
+  <link rel="stylesheet" href="assets/css/members.css">
+  <link rel="stylesheet" href="assets/css/terminal.css">
+  <link rel="stylesheet" href="assets/css/newspaper.css">
+  <link rel="stylesheet" href="assets/css/footer.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+  <div class="boot" id="boot">
+    <div class="boot__inner">
+      <p class="boot__brand">NSPD // NEO SAMPIT POLICE DEPT.</p>
+      <pre class="boot__log" id="bootLog"></pre>
+      <div class="boot__bar">
+        <span class="boot__fill" id="bootFill"></span>
+      </div>
+      <button class="boot__skip" id="bootSkip" type="button">Lewati &gt;&gt;</button>
+    </div>
+  </div>
+
+  <div class="city" aria-hidden="true">
+    <div class="city__sky"></div>
+    <div class="city__moon"></div>
+    <div class="city__fog city__fog--1"></div>
+    <div class="city__layer city__layer--far"></div>
+    <div class="city__beam city__beam--1"></div>
+    <div class="city__beam city__beam--2"></div>
+    <div class="city__layer city__layer--mid"></div>
+    <div class="city__signs">
+      <span class="sign sign--a">RPL</span>
+      <span class="sign sign--b">コード</span>
+      <span class="sign sign--c">24/7 DEBUG</span>
+      <span class="sign sign--d">NEO SAMPIT</span>
+    </div>
+    <div class="city__layer city__layer--near"></div>
+    <div class="city__fog city__fog--2"></div>
+    <div class="city__street"></div>
+    <canvas class="city__rain" id="rainCanvas"></canvas>
+    <div class="city__siren city__siren--red"></div>
+    <div class="city__siren city__siren--blue"></div>
+    <div class="city__lightning" id="lightning"></div>
+    <div class="city__scanlines"></div>
+    <div class="city__vignette"></div>
+  </div>
+
+  <header class="navbar" id="navbar">
+    <a class="navbar__logo" href="#beranda">
+      <span class="navbar__bracket">&lt;</span>
+      <span class="navbar__text">XI<span class="navbar__dot">.</span>RPL1</span>
+      <span class="navbar__bracket">/&gt;</span>
+    </a>
+    <nav class="navbar__menu" id="navMenu">
+      <a class="navbar__link" href="#beranda">Beranda</a>
+      <a class="navbar__link" href="#profil">Profil</a>
+      <a class="navbar__link" href="#wali-kelas">Wali Kelas</a>
+      <a class="navbar__link" href="#anggota">Anggota</a>
+      <a class="navbar__link" href="#live-coding">Live Coding</a>
+      <a class="navbar__link" href="#berita">Berita</a>
+    </nav>
+    <div class="navbar__status">
+      <span class="navbar__led"></span>
+      <span class="navbar__clock" id="clock">00:00:00</span>
+    </div>
+    <button class="navbar__toggle" id="navToggle" type="button" aria-label="Buka menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <main>
+
+    <section class="hero" id="beranda">
+      <div class="hero__lightbar" aria-hidden="true">
+        <span class="hero__lamp hero__lamp--red"></span>
+        <span class="hero__lamp hero__lamp--mid"></span>
+        <span class="hero__lamp hero__lamp--blue"></span>
+      </div>
+      <div class="hero__content">
+        <p class="hero__eyebrow">
+          <span class="hero__pulse"></span>
+          DISPATCH AKTIF // UNIT REKAYASA PERANGKAT LUNAK
+        </p>
+        <h1 class="hero__title" data-text="XI RPL 1">XI RPL 1</h1>
+        <p class="hero__school">SMK NEGERI 1 SAMPIT</p>
+        <p class="hero__typed">
+          <span class="hero__prompt">root@neo-sampit:~$</span>
+          <span id="heroTyped"></span>
+          <span class="caret"></span>
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#anggota">
+            <span>Lihat Anggota</span>
+          </a>
+          <a class="btn btn--ghost" href="#live-coding">
+            <span>Mulai Live Coding</span>
+          </a>
+        </div>
+        <ul class="hero__stats">
+          <li class="hero__stat">
+            <span class="hero__stat-value" data-count="33">0</span>
+            <span class="hero__stat-label">Agen Aktif</span>
+          </li>
+          <li class="hero__stat">
+            <span class="hero__stat-value" data-count="25">0</span>
+            <span class="hero__stat-label">Laki-laki</span>
+          </li>
+          <li class="hero__stat">
+            <span class="hero__stat-value" data-count="8">0</span>
+            <span class="hero__stat-label">Perempuan</span>
+          </li>
+          <li class="hero__stat">
+            <span class="hero__stat-value">&infin;</span>
+            <span class="hero__stat-label">Bug Ditangkap</span>
+          </li>
+        </ul>
+      </div>
+      <a class="hero__scroll" href="#profil" aria-label="Gulir ke bawah">
+        <span class="hero__scroll-line"></span>
+        <span class="hero__scroll-text">SCROLL</span>
+      </a>
+    </section>
+
+    <div class="tape" aria-hidden="true">
+      <div class="tape__track">
+        <span>GARIS POLISI // DILARANG MELINTAS // AREA PENYELIDIKAN BUG // XI RPL 1 // </span>
+        <span>GARIS POLISI // DILARANG MELINTAS // AREA PENYELIDIKAN BUG // XI RPL 1 // </span>
+        <span>GARIS POLISI // DILARANG MELINTAS // AREA PENYELIDIKAN BUG // XI RPL 1 // </span>
+        <span>GARIS POLISI // DILARANG MELINTAS // AREA PENYELIDIKAN BUG // XI RPL 1 // </span>
+      </div>
+    </div>
+
+    <section class="section profile" id="profil">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="section__tag">// BERKAS 01</p>
+          <h2 class="section__title">Profil Divisi</h2>
+          <p class="section__lead">Di kota yang tidak pernah berhenti hujan, satu unit siaga menjaga setiap baris kode tetap bersih dari kejahatan sintaks.</p>
+        </header>
+        <div class="profile__grid">
+          <article class="profile__card profile__card--main reveal">
+            <div class="profile__card-head">
+              <span class="profile__badge">ID-UNIT</span>
+              <span class="profile__code">NSPD-RPL-XI-01</span>
+            </div>
+            <dl class="profile__list">
+              <div class="profile__row">
+                <dt>Kelas</dt>
+                <dd>XI RPL 1</dd>
+              </div>
+              <div class="profile__row">
+                <dt>Sekolah</dt>
+                <dd>SMK Negeri 1 Sampit</dd>
+              </div>
+              <div class="profile__row">
+                <dt>Tahun Ajaran</dt>
+                <dd>2026/2027</dd>
+              </div>
+              <div class="profile__row">
+                <dt>Bidang Keahlian</dt>
+                <dd>Teknologi Informasi</dd>
+              </div>
+              <div class="profile__row">
+                <dt>Program Keahlian</dt>
+                <dd>Pengembangan Perangkat Lunak dan Gim</dd>
+              </div>
+              <div class="profile__row">
+                <dt>Konsentrasi Keahlian</dt>
+                <dd>Rekayasa Perangkat Lunak</dd>
+              </div>
+            </dl>
+          </article>
+          <article class="profile__card profile__card--mission reveal">
+            <p class="profile__label">MISI UTAMA</p>
+            <h3 class="profile__heading">Lindungi kode. Layani pengguna. Tangkap setiap bug.</h3>
+            <ul class="profile__missions">
+              <li>
+                <span class="profile__num">01</span>
+                <span>Menulis kode yang rapi, aman, dan mudah dibaca.</span>
+              </li>
+              <li>
+                <span class="profile__num">02</span>
+                <span>Menyelidiki error sampai ke akar masalahnya.</span>
+              </li>
+              <li>
+                <span class="profile__num">03</span>
+                <span>Bekerja sama sebagai satu tim yang solid.</span>
+              </li>
+              <li>
+                <span class="profile__num">04</span>
+                <span>Terus belajar teknologi baru setiap hari.</span>
+              </li>
+            </ul>
+          </article>
+          <article class="profile__card profile__card--radar reveal">
+            <p class="profile__label">RADAR KOTA</p>
+            <div class="radar">
+              <div class="radar__sweep"></div>
+              <span class="radar__ring radar__ring--1"></span>
+              <span class="radar__ring radar__ring--2"></span>
+              <span class="radar__ring radar__ring--3"></span>
+              <span class="radar__blip radar__blip--1"></span>
+              <span class="radar__blip radar__blip--2"></span>
+              <span class="radar__blip radar__blip--3"></span>
+              <span class="radar__blip radar__blip--4"></span>
+            </div>
+            <p class="profile__radar-text">4 bug terdeteksi di sektor <strong>main.js</strong></p>
+          </article>
+          <article class="profile__card profile__card--gender reveal">
+            <p class="profile__label">KOMPOSISI AGEN</p>
+            <div class="gender">
+              <div class="gender__row">
+                <span class="gender__name">Laki-laki</span>
+                <span class="gender__bar">
+                  <span class="gender__fill gender__fill--l" style="--w: 75.7%"></span>
+                </span>
+                <span class="gender__val">25</span>
+              </div>
+              <div class="gender__row">
+                <span class="gender__name">Perempuan</span>
+                <span class="gender__bar">
+                  <span class="gender__fill gender__fill--p" style="--w: 24.3%"></span>
+                </span>
+                <span class="gender__val">8</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section chief" id="wali-kelas">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="section__tag">// BERKAS 02</p>
+          <h2 class="section__title">Komandan Unit</h2>
+          <p class="section__lead">Pemimpin yang memastikan setiap agen pulang dengan ilmu dan tanpa error.</p>
+        </header>
+        <article class="chief__card reveal">
+          <div class="chief__photo">
+            <img src="assets/img/wali-kelas/arif-rahmadhani.svg" alt="Foto wali kelas Arif Rahmadhani" loading="lazy">
+            <span class="chief__scan"></span>
+            <span class="chief__stamp">TERVERIFIKASI</span>
+          </div>
+          <div class="chief__info">
+            <p class="chief__role">WALI KELAS // KOMANDAN</p>
+            <h3 class="chief__name">Arif Rahmadhani</h3>
+            <p class="chief__nip">NIP/NIPPPK. 199502142022211003</p>
+            <div class="chief__meta">
+              <div class="chief__meta-item">
+                <span class="chief__meta-label">Unit</span>
+                <span class="chief__meta-value">XI RPL 1</span>
+              </div>
+              <div class="chief__meta-item">
+                <span class="chief__meta-label">Status</span>
+                <span class="chief__meta-value chief__meta-value--on">ON DUTY</span>
+              </div>
+              <div class="chief__meta-item">
+                <span class="chief__meta-label">Akses</span>
+                <span class="chief__meta-value">LEVEL 5</span>
+              </div>
+            </div>
+            <blockquote class="chief__quote">"Kode yang baik bukan yang tidak pernah error, tapi yang selalu bisa diperbaiki."</blockquote>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section members" id="anggota">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="section__tag">// BERKAS 03</p>
+          <h2 class="section__title">Database Agen</h2>
+          <p class="section__lead">33 agen terdaftar dalam sistem. Ketik nama atau nomor induk untuk mencari berkas.</p>
+        </header>
+        <div class="members__tools reveal">
+          <label class="search" for="memberSearch">
+            <span class="search__prompt">&gt;_</span>
+            <input class="search__input" id="memberSearch" type="search" placeholder="cari nama / nomor induk..." autocomplete="off">
+          </label>
+          <div class="filter" role="group" aria-label="Filter anggota">
+            <button class="filter__btn is-active" type="button" data-filter="all">Semua</button>
+            <button class="filter__btn" type="button" data-filter="L">Laki-laki</button>
+            <button class="filter__btn" type="button" data-filter="P">Perempuan</button>
+          </div>
+          <p class="members__count">
+            <span id="memberCount">33</span> berkas ditemukan
+          </p>
+        </div>
+        <div class="members__grid" id="memberGrid">
+          <article class="agent reveal" data-name="akhmad sayfani ramadhan" data-nis="16913" data-gender="L" style="--i: 0">
+            <div class="agent__photo">
+              <img src="assets/img/siswa/16913.svg" alt="Foto Akhmad Sayfani Ramadhan" loading="lazy">
+              <span class="agent__no">#01</span>
+              <span class="agent__gender agent__gender--l">L</span>
+            </div>
+            <div class="agent__info">
+              <p class="agent__unit">UNIT ALPHA-01</p>
+              <h3 class="agent__name">Akhmad Sayfani Ramadhan</h3>
+              <dl class="agent__data">
+                <div class="agent__row">
+                  <dt>NIS</dt>
+                  <dd>16913</dd>
+                </div>
+                <div class="agent__row">
+                  <dt>Gender</dt>
+                  <dd>Laki-laki</dd>
+                </div>
+              </dl>
+              <p class="agent__status">
+                <span class="agent__led"></span>
+                ON DUTY
+              </p>
+            </div>
+          </article>
+          <article class="agent reveal" data-name="alfian nur rohman" data-nis="16914" data-gender="L" style="--i: 1">
+            <div class="agent__photo">
+              <img src="assets/img/siswa/16914.svg" alt="Foto Alfian Nur Rohman" loading="lazy">
+              <span class="agent__no">#02</span>
+              <span class="agent__gender agent__gender--l">L</span>
+            </div>
+            <div class="agent__info">
+              <p class="agent__unit">UNIT BRAVO-02</p>
+              <h3 class="agent__name">Alfian Nur Rohman</h3>
+              <dl class="agent__data">
+                <div class="agent__row">
+                  <dt>NIS</dt>
+                  <dd>16914</dd>
+                </div>
+                <div class="agent__row">
+                  <dt>Gender</dt>
+                  <dd>Laki-laki</dd>
+                </div>
+              </dl>
+              <p class="agent__status">
+                <span class="agent__led"></span>
+                ON DUTY
+              </p>
+            </div>
+          </article>
+          <article class="agent reveal" data-name="aprian ezra ananda" data-nis="16915" data-gender="L" style="--i: 2">
+            <div class="agent__photo">
+              <img src="assets/img/siswa/16915.svg" alt="Foto Aprian Ezra Ananda" loading="lazy">
+              <span class="agent__no">#03</span>
+              <span class="agent__gender agent__gender--l">L</span>
+            </div>
+            <div class="agent__info">
+              <p class="agent__unit">UNIT CHARLIE-03</p>
+              <h3 class="agent__name">Aprian Ezra Ananda</h3>
+              <dl class="agent__data">
+                <div class="agent__row">
+                  <dt>NIS</dt>
+                  <dd>16915</dd>
+                </div>
+                <div class="agent__row">
+                  <dt>Gender</dt>
+                  <dd>Laki-laki</dd>
+                </div>
+              </dl>
+              <p class="agent__status">
+                <span class="agent__led"></span>
+                ON DUTY
+              </p>
+            </div>
+          </article>
+          <article class="agent reveal" data-name="aqeila triandria sari" data-nis="16916" data-gender="P" style="--i: 3">
+            <div class="agent__photo">
+              <img src="assets/img/siswa/16916.svg" alt="Foto Aqeila Triandria Sari" loading="lazy">
+              <span class="agent__no">#04</span>
+              <span class="agent__gender agent__gender--p">P</span>
+            </div>
+            <div class="agent__info">
+              <p class="agent__unit">UNIT DELTA-04</p>
+              <h3 class="agent__name">Aqeila Triandria Sari</h3>
+              <dl class="agent__data">
+                <div class="agent__row">
+                  <dt>NIS</dt>
+                  <dd>16916</dd>
+                </div>
+                <div class="agent__row">
+                  <dt>Gender</dt>
+                  <dd>Perempuan</dd>
+                </div>
+              </dl>
+              <p class="agent__status">
+                <span class="agent__led"></span>
+                ON DUTY
+              </p>
+            </div>
+          </article>
+          <article class="agent reveal" data-name="bima catur putra utama" data-nis="16917" data-gender="L" style="--i: 4">
+            <div class="agent__photo">
+              <img src="assets/img/siswa/16917.svg" alt="Foto Bima Catur Putra Utama" loading="lazy">
+              <span class="agent__no">#05</span>
+              <span class="agent__gender agent__gender--l">L</span>
+            </div>
+            <div class="agent__info">
+              <p class="agent__unit">UNIT ECHO-05</p>
+              <h3 class="agent__name">Bima Catur Putra Utama</h3>
+              <dl class="agent__data">
+                <div class="agent__row">
+                  <dt>NIS</dt>
+                  <dd>16917</dd>
+                </div>
+                <div class="agent__row">
+                  <dt>Gender</dt>
+                  <dd>Laki-laki</dd>
+                </div>
+              </dl>
+              <p class="agent__status">
+                <span class="agent__led"></span>
+                ON DUTY
+              </p>
+            </div>
+          </article>
+          <article class="agent reveal" data-name="chelvin imanuel" data-nis="16918" data-gender="L" style="--i: 5">
+            <div class="agent__photo">
+              <img src="assets/img/siswa/16918.svg" alt="Foto Chelvin Imanuel" loading="lazy">
+              <span class="agent__no">#06</span>
+              <span class="agent__gender agent__gender--l">L</span>
+            </div>
+            <div class="agent__info">
+              <p class="agent__unit">UNIT FOXTROT-06</p>
+              <h3 class="agent__name">Chelvin Imanuel</h3>
+              <dl class="agent__data">
+                <div class="agent__row">
+                  <dt>NIS</dt>
+                  <dd>16918</dd>
+                </div>
+                <div class="agent__row">
+                  <dt>Gender</dt>
+                  <dd>Laki-laki</dd>
+                </div>
+              </dl>
+              <p class="agent__status">
+                <span class="agent__led"></span>
+                ON DUTY
+              </p>
+            </div>
+          </article>
+          <article class="agent reveal" data-name="chrisander julius justus" data-nis="16919" data-gender="L" style="--i: 0">
+            <div class="agent__photo">
+              <img src="assets/img/siswa/16919.svg" alt="Foto Chrisander Julius Justus" loading="lazy">
+              <span class="agent__no">#07</span>
+              <span class="agent__gender agent__gender--l">L</span>
+            </div>
+            <div class="agent__info">
+              <p class="agent__unit">UNIT GHOST-07</p>
+              <h3 class="agent__name">Chrisander Julius Justus</h3>
+              <dl class="agent__data">
+                <div class="agent__row">
+                  <dt>NIS</dt>
+                  <dd>16919</dd>
+                </div>
+                <div class="agent__row">
+                  <dt>Gender</dt>
+                  <dd>Laki-laki</dd>
+                </div>
+              </dl>
+              <p class="agent__status">
+                <span class="agent__led"></span>
+                ON DUTY
+              </p>
+            </div>
+          </article>
+          <article class="agent reveal" data-name="dzaky rahmatullah" data-nis="16704" data-gender="L" style="--i: 1">
+            <div class="agent__photo">
+              <img src="assets/img/siswa/16704.svg" alt="Foto Dzaky Rahmatullah" loading="lazy">
+              <span class="agent__no">#08</span>
+              <span class="agent__gender agent__gender--l">L</span>
+            </div>
+            <div class="agent__info">
+              <p class="agent__unit">UNIT HUNTER-08</p>
+              <h3 class="agent__name">Dzaky Rahmatullah</h3>
+              <dl class="agent__data">
+                <div class="agent__row">
+                  <dt>NIS</dt>
+                  <dd>16704</dd>
+                </div>
+                <div class="agent__row">
+                  <dt>Gender</dt>
+                  <dd>Laki-laki</dd>
+                </div>
+              </dl>
+              <p class="agent__status">
+                <span class="agent__led"></span>
+                ON DUTY
+              </p>
+            </div>
+          </article>
+          <article class="agent reveal" data-name="fitria tantri" data-nis="16921" data-gender="P" style="--i: 2">
+            <div class="agent__photo">
+              <img src="assets/img/siswa/16921.svg" alt="Foto Fitria Tantri" loading="lazy">
+              <span class="agent__no">#09</span>
+              <span class="agent__gender agent__gender--p">P</span>
+            </div>
+            <div class="agent__info">
+              <p class="agent__unit">UNIT ION-09</p>
+              <h3 class="agent__name">Fitria Tantri</h3>
+              <dl class="agent__data">
+                <div class="agent__row">
+                  <dt>NIS</dt>
+                  <dd>16921</dd>
+                </div>
+                <div class="agent__row">
+                  <dt>Gender</dt>
+                  <dd>Perempuan</dd>
+                </div>
+              </dl>
+              <p class="agent__status">
+                <span class="agent__led"></span>
+                ON DUTY
+              </p>
+            </div>
+          </article>
+          <article class="agent reveal" data-name="gavin raisa santoso" data-nis="16922" data-gender="L" style="--i: 3">
+            <div class="agent__photo">
+              <img src="assets/img/siswa/16922.svg" alt="Foto Gavin Raisa Santoso" loading="lazy">
+              <span class="agent__no">#10</span>
+              <span class="agent__gender agent__gender--l">L</span>
+            </div>
+            <div class="agent__info">
+              <p class="agent__unit">UNIT JOLT-10</p>
+              <h3 class="agent__name">Gavin Raisa Santoso</h3>
+              <dl class="agent__data">
+                <div class="agent__row">
+                  <dt>NIS</dt>
+                  <dd>16922</dd>
+                </div>
+                <div class="agent__row">
+                  <dt>Gender</dt>
+                  <dd>Laki-laki</dd>
+                </div>
+              </dl>
+              <p class="agent__status">
+                <span class="agent__led"></span>
+                ON DUTY
+              </p>
+            </div>
+          </article>
+          <article class="agent reveal" data-name="handi pranata" data-nis="16923" data-gender="L" style="--i: 4">
+            <div class="agent__photo">
+              <img src="assets/img/siswa/16923.svg" alt="Foto Handi Pranata" loading="lazy">
+              <span class="agent__no">#11</span>
+              <span class="agent__gender agent__gender--l">L</span>
+            </div>
+            <div class="agent__info">
+              <p class="agent__unit">UNIT KILO-11</p>
+              <h3 class="agent__name">Handi Pranata</h3>
+              <dl class="agent__data">
+                <div class="agent__row">
+                  <dt>NIS</dt>
+                  <dd>16923</dd>
+                </div>
+                <div class="agent__row">
+                  <dt>Gender</dt>
+                  <dd>Laki-laki</dd>
+                </div>
+              </dl>
+              <p class="agent__status">
+                <span class="agent__led"></span>
+                ON DUTY
+              </p>
+            </div>
+          </article>
+          <article class="agent reveal" data-name="juwita amalia" data-nis="16925" data-gender="P" style="--i: 5">
+            <div class="agent__photo">
+              <img src="assets/img/siswa/16925.svg" alt="Foto Juwita Amalia" loading="lazy">
+              <span class="agent__no">#12</span>
+              <span class="agent__gender agent__gender--p">P</span>
+            </div>
+            <div class="agent__info">
+              <p class="agent__unit">UNIT ALPHA-12</p>
+              <h3 class="agent__name">Juwita Amalia</h3>
+              <dl class="agent__data">
+                <div class="agent__row">
+                  <dt>NIS</dt>
+                  <dd>16925</dd>
+                </div>
+                <div class="agent__row">
+                  <dt>Gender</dt>
+                  <dd>Perempuan</dd>
+                </div>
+              </dl>
+              <p class="agent__status">
+                <span class="agent__led"></span>
+                ON DUTY
+              </p>
+            </div>
+          </article>
+          <article class="agent reveal" data-name="m. arjun pratama riadi" data-nis="16926" data-gender="L" style="--i: 0">
+            <div class="agent__photo">
+              <img src="assets/img/siswa/16926.svg" alt="Foto M. Arjun Pratama Riadi" loading="lazy">
+              <span class="agent__no">#13</span>
+              <span class="agent__gender agent__gender--l">L</span>
+            </div>
+            <div class="agent__info">
+              <p class="agent__unit">UNIT BRAVO-13</p>
+              <h3 class="agent__name">M. Arjun Pratama Riadi</h3>
+              <dl class="agent__data">
+                <div class="agent__row">
+                  <dt>NIS</dt>
+                  <dd>16926</dd>
+                </div>
+                <div class="agent__row">
+                  <dt>Gender</dt>
+                  <dd>Laki-laki</dd>
+                </div>
+              </dl>
+              <p class="agent__status">
+                <span class="agent__led"></span>
+                ON DUTY
+              </p>
+            </div>
+          </article>
+          <article class="agent reveal" data-name="m. messi alexander zulkarnain" data-nis="16927" data-gender="L" style="--i: 1">
+            <div class="agent__photo">
+              <img src="assets/img/siswa/16927.svg" alt="Foto M. Messi Alexander Zulkarnain" loading="lazy">
+              <span class="agent__no">#14</span>
+              <span class="agent__gender agent__gender--l">L</span>
+            </div>
+            <div class="agent__info">
+              <p class="agent__unit">UNIT CHARLIE-14</p>
+              <h3 class="agent__name">M. Messi Alexander Zulkarnain</h3>
+              <dl class="agent__data">
+                <div class="agent__row">
+                  <dt>NIS</dt>
+                  <dd>16927</dd>
+                </div>
+                <div class="agent__row">
+                  <dt>Gender</dt>
+                  <dd>Laki-laki</dd>
+                </div>
+              </dl>
+              <p class="agent__status">
+                <span class="agent__led"></span>
+                ON DUTY
+              </p>
+            </div>
+          </article>
+          <article class="agent reveal" data-name="m. rehan apriyoga" data-nis="16928" data-gender="L" style="--i: 2">
+            <div class="agent__photo">
+              <img src="assets/img/siswa/16928.svg" alt="Foto M. Rehan Apriyoga" loading="lazy">
+              <span class="agent__no">#15</span>
+              <span class="agent__gender agent__gender--l">L</span>
+            </div>
+            <div class="agent__info">
+              <p class="agent__unit">UNIT DELTA-15</p>
+              <h3 class="agent__name">M. Rehan Apriyoga</h3>
+              <dl class="agent__data">
+                <div class="agent__row">
+                  <dt>NIS</dt>
+                  <dd>16928</dd>
+                </div>
+                <div class="agent__row">
+                  <dt>Gender</dt>
+                  <dd>Laki-laki</dd>
+                </div>
+              </dl>
+              <p class="agent__status">
+                <span class="agent__led"></span>
+                ON DUTY
+              </p>
+            </div>
+          </article>
+          <article class="agent reveal" data-name="marceleno putra syailendra" data-nis="16929" data-gender="L" style="--i: 3">
+            <div class="agent__photo">
+              <img src="assets/img/siswa/16929.svg" alt="Foto Marceleno Putra Syailendra" loading="lazy">
+              <span class="agent__no">#16</span>
+              <span class="agent__gender agent__gender--l">L</span>
+            </div>
+            <div class="agent__info">
+              <p class="agent__unit">UNIT ECHO-16</p>
+              <h3 class="agent__name">Marceleno Putra Syailendra</h3>
+              <dl class="agent__data">
+                <div class="agent__row">
+                  <dt>NIS</dt>
+                  <dd>16929</dd>
+                </div>
+                <div class="agent__row">
+                  <dt>Gender</dt>
+                  <dd>Laki-laki</dd>
+                </div>
+              </dl>
+              <p class="agent__status">
+                <span class="agent__led"></span>
+                ON DUTY
+              </p>
+            </div>
+          </article>
+          <article class="agent reveal" data-name="mohamad alfin pratama" data-nis="16930" data-gender="L" style="--i: 4">
+            <div class="agent__photo">
+              <img src="assets/img/siswa/16930.svg" alt="Foto Mohamad Alfin Pratama" loading="lazy">
+              <span class="agent__no">#17</span>
+              <span class="agent__gender agent__gender--l">L</span>
+            </div>
+            <div class="agent__info">
+              <p class="agent__unit">UNIT FOXTROT-17</p>
+              <h3 class="agent__name">Mohamad Alfin Pratama</h3>
+              <dl class="agent__data">
+                <div class="agent__row">
+                  <dt>NIS</dt>
+                  <dd>16930</dd>
+                </div>
+                <div class="agent__row">
+                  <dt>Gender</dt>
+                  <dd>Laki-laki</dd>
+                </div>
+              </dl>
+              <p class="agent__status">
+                <span class="agent__led"></span>
+                ON DUTY
+              </p>
+            </div>
+          </article>
+          <article class="agent reveal" data-name="muhamad rezki" data-nis="16931" data-gender="L" style="--i: 5">
+            <div class="agent__photo">
+              <img src="assets/img/siswa/16931.svg" alt="Foto Muhamad Rezki" loading="lazy">
+              <span class="agent__no">#18</span>
+              <span class="agent__gender agent__gender--l">L</span>
+            </div>
+            <div class="agent__info">
+              <p class="agent__unit">UNIT GHOST-18</p>
+              <h3 class="agent__name">Muhamad Rezki</h3>
+              <dl class="agent__data">
+                <div class="agent__row">
+                  <dt>NIS</dt>
+                  <dd>16931</dd>
+                </div>
+                <div class="agent__row">
+                  <dt>Gender</dt>
+                  <dd>Laki-laki</dd>
+                </div>
+              </dl>
+              <p class="agent__status">
+                <span class="agent__led"></span>
+                ON DUTY
+              </p>
+            </div>
+          </article>
+          <article class="agent reveal" data-name="muhammad daffa nur&#x27;addin" data-nis="16934" data-gender="L" style="--i: 0">
+            <div class="agent__photo">
+              <img src="assets/img/siswa/16934.svg" alt="Foto Muhammad Daffa Nur&#x27;addin" loading="lazy">
+              <span class="agent__no">#19</span>
+              <span class="agent__gender agent__gender--l">L</span>
+            </div>
+            <div class="agent__info">
+              <p class="agent__unit">UNIT HUNTER-19</p>
+              <h3 class="agent__name">Muhammad Daffa Nur&#x27;addin</h3>
+              <dl class="agent__data">
+                <div class="agent__row">
+                  <dt>NIS</dt>
+                  <dd>16934</dd>
+                </div>
+                <div class="agent__row">
+                  <dt>Gender</dt>
+                  <dd>Laki-laki</dd>
+                </div>
+              </dl>
+              <p class="agent__status">
+                <span class="agent__led"></span>
+                ON DUTY
+              </p>
+            </div>
+          </article>
+          <article class="agent reveal" data-name="muhammad fazrin fahreza" data-nis="16935" data-gender="L" style="--i: 1">
+            <div class="agent__photo">
+              <img src="assets/img/siswa/16935.svg" alt="Foto Muhammad Fazrin Fahreza" loading="lazy">
+              <span class="agent__no">#20</span>
+              <span class="agent__gender agent__gender--l">L</span>
+            </div>
+            <div class="agent__info">
+              <p class="agent__unit">UNIT ION-20</p>
+              <h3 class="agent__name">Muhammad Fazrin Fahreza</h3>
+              <dl class="agent__data">
+                <div class="agent__row">
+                  <dt>NIS</dt>
+                  <dd>16935</dd>
+                </div>
+                <div class="agent__row">
+                  <dt>Gender</dt>
+                  <dd>Laki-laki</dd>
+                </div>
+              </dl>
+              <p class="agent__status">
+                <span class="agent__led"></span>
+                ON DUTY
+              </p>
+            </div>
+          </article>
+          <article class="agent reveal" data-name="muhammad ferrizq rayandra" data-nis="16936" data-gender="L" style="--i: 2">
+            <div class="agent__photo">
+              <img src="assets/img/siswa/16936.svg" alt="Foto Muhammad Ferrizq Rayandra" loading="lazy">
+              <span class="agent__no">#21</span>
+              <span class="agent__gender agent__gender--l">L</span>
+            </div>
+            <div class="agent__info">
+              <p class="agent__unit">UNIT JOLT-21</p>
+              <h3 class="agent__name">Muhammad Ferrizq Rayandra</h3>
+              <dl class="agent__data">
+                <div class="agent__row">
+                  <dt>NIS</dt>
+                  <dd>16936</dd>
+                </div>
+                <div class="agent__row">
+                  <dt>Gender</dt>
+                  <dd>Laki-laki</dd>
+                </div>
+              </dl>
+              <p class="agent__status">
+                <span class="agent__led"></span>
+                ON DUTY
+              </p>
+            </div>
+          </article>
+          <article class="agent reveal" data-name="muhammad rizky agustin" data-nis="16937" data-gender="L" style="--i: 3">
+            <div class="agent__photo">
+              <img src="assets/img/siswa/16937.svg" alt="Foto Muhammad Rizky Agustin" loading="lazy">
+              <span class="agent__no">#22</span>
+              <span class="agent__gender agent__gender--l">L</span>
+            </div>
+            <div class="agent__info">
+              <p class="agent__unit">UNIT KILO-22</p>
+              <h3 class="agent__name">Muhammad Rizky Agustin</h3>
+              <dl class="agent__data">
+                <div class="agent__row">
+                  <dt>NIS</dt>
+                  <dd>16937</dd>
+                </div>
+                <div class="agent__row">
+                  <dt>Gender</dt>
+                  <dd>Laki-laki</dd>
+                </div>
+              </dl>
+              <p class="agent__status">
+                <span class="agent__led"></span>
+                ON DUTY
+              </p>
+            </div>
+          </article>
+          <article class="agent reveal" data-name="muhammad tsaqif al hafiz" data-nis="16938" data-gender="L" style="--i: 4">
+            <div class="agent__photo">
+              <img src="assets/img/siswa/16938.svg" alt="Foto Muhammad Tsaqif Al Hafiz" loading="lazy">
+              <span class="agent__no">#23</span>
+              <span class="agent__gender agent__gender--l">L</span>
+            </div>
+            <div class="agent__info">
+              <p class="agent__unit">UNIT ALPHA-23</p>
+              <h3 class="agent__name">Muhammad Tsaqif Al Hafiz</h3>
+              <dl class="agent__data">
+                <div class="agent__row">
+                  <dt>NIS</dt>
+                  <dd>16938</dd>
+                </div>
+                <div class="agent__row">
+                  <dt>Gender</dt>
+                  <dd>Laki-laki</dd>
+                </div>
+              </dl>
+              <p class="agent__status">
+                <span class="agent__led"></span>
+                ON DUTY
+              </p>
+            </div>
+          </article>
+          <article class="agent reveal" data-name="nabila" data-nis="16939" data-gender="P" style="--i: 5">
+            <div class="agent__photo">
+              <img src="assets/img/siswa/16939.svg" alt="Foto Nabila" loading="lazy">
+              <span class="agent__no">#24</span>
+              <span class="agent__gender agent__gender--p">P</span>
+            </div>
+            <div class="agent__info">
+              <p class="agent__unit">UNIT BRAVO-24</p>
+              <h3 class="agent__name">Nabila</h3>
+              <dl class="agent__data">
+                <div class="agent__row">
+                  <dt>NIS</dt>
+                  <dd>16939</dd>
+                </div>
+                <div class="agent__row">
+                  <dt>Gender</dt>
+                  <dd>Perempuan</dd>
+                </div>
+              </dl>
+              <p class="agent__status">
+                <span class="agent__led"></span>
+                ON DUTY
+              </p>
+            </div>
+          </article>
+          <article class="agent reveal" data-name="nico eka saputra" data-nis="16940" data-gender="L" style="--i: 0">
+            <div class="agent__photo">
+              <img src="assets/img/siswa/16940.svg" alt="Foto Nico Eka Saputra" loading="lazy">
+              <span class="agent__no">#25</span>
+              <span class="agent__gender agent__gender--l">L</span>
+            </div>
+            <div class="agent__info">
+              <p class="agent__unit">UNIT CHARLIE-25</p>
+              <h3 class="agent__name">Nico Eka Saputra</h3>
+              <dl class="agent__data">
+                <div class="agent__row">
+                  <dt>NIS</dt>
+                  <dd>16940</dd>
+                </div>
+                <div class="agent__row">
+                  <dt>Gender</dt>
+                  <dd>Laki-laki</dd>
+                </div>
+              </dl>
+              <p class="agent__status">
+                <span class="agent__led"></span>
+                ON DUTY
+              </p>
+            </div>
+          </article>
+          <article class="agent reveal" data-name="noor musahadah" data-nis="16941" data-gender="P" style="--i: 1">
+            <div class="agent__photo">
+              <img src="assets/img/siswa/16941.svg" alt="Foto Noor Musahadah" loading="lazy">
+              <span class="agent__no">#26</span>
+              <span class="agent__gender agent__gender--p">P</span>
+            </div>
+            <div class="agent__info">
+              <p class="agent__unit">UNIT DELTA-26</p>
+              <h3 class="agent__name">Noor Musahadah</h3>
+              <dl class="agent__data">
+                <div class="agent__row">
+                  <dt>NIS</dt>
+                  <dd>16941</dd>
+                </div>
+                <div class="agent__row">
+                  <dt>Gender</dt>
+                  <dd>Perempuan</dd>
+                </div>
+              </dl>
+              <p class="agent__status">
+                <span class="agent__led"></span>
+                ON DUTY
+              </p>
+            </div>
+          </article>
+          <article class="agent reveal" data-name="noor rahmat aditya" data-nis="16942" data-gender="L" style="--i: 2">
+            <div class="agent__photo">
+              <img src="assets/img/siswa/16942.svg" alt="Foto Noor Rahmat Aditya" loading="lazy">
+              <span class="agent__no">#27</span>
+              <span class="agent__gender agent__gender--l">L</span>
+            </div>
+            <div class="agent__info">
+              <p class="agent__unit">UNIT ECHO-27</p>
+              <h3 class="agent__name">Noor Rahmat Aditya</h3>
+              <dl class="agent__data">
+                <div class="agent__row">
+                  <dt>NIS</dt>
+                  <dd>16942</dd>
+                </div>
+                <div class="agent__row">
+                  <dt>Gender</dt>
+                  <dd>Laki-laki</dd>
+                </div>
+              </dl>
+              <p class="agent__status">
+                <span class="agent__led"></span>
+                ON DUTY
+              </p>
+            </div>
+          </article>
+          <article class="agent reveal" data-name="norsyifa" data-nis="16943" data-gender="P" style="--i: 3">
+            <div class="agent__photo">
+              <img src="assets/img/siswa/16943.svg" alt="Foto Norsyifa" loading="lazy">
+              <span class="agent__no">#28</span>
+              <span class="agent__gender agent__gender--p">P</span>
+            </div>
+            <div class="agent__info">
+              <p class="agent__unit">UNIT FOXTROT-28</p>
+              <h3 class="agent__name">Norsyifa</h3>
+              <dl class="agent__data">
+                <div class="agent__row">
+                  <dt>NIS</dt>
+                  <dd>16943</dd>
+                </div>
+                <div class="agent__row">
+                  <dt>Gender</dt>
+                  <dd>Perempuan</dd>
+                </div>
+              </dl>
+              <p class="agent__status">
+                <span class="agent__led"></span>
+                ON DUTY
+              </p>
+            </div>
+          </article>
+          <article class="agent reveal" data-name="radit pramana" data-nis="16944" data-gender="L" style="--i: 4">
+            <div class="agent__photo">
+              <img src="assets/img/siswa/16944.svg" alt="Foto Radit Pramana" loading="lazy">
+              <span class="agent__no">#29</span>
+              <span class="agent__gender agent__gender--l">L</span>
+            </div>
+            <div class="agent__info">
+              <p class="agent__unit">UNIT GHOST-29</p>
+              <h3 class="agent__name">Radit Pramana</h3>
+              <dl class="agent__data">
+                <div class="agent__row">
+                  <dt>NIS</dt>
+                  <dd>16944</dd>
+                </div>
+                <div class="agent__row">
+                  <dt>Gender</dt>
+                  <dd>Laki-laki</dd>
+                </div>
+              </dl>
+              <p class="agent__status">
+                <span class="agent__led"></span>
+                ON DUTY
+              </p>
+            </div>
+          </article>
+          <article class="agent reveal" data-name="rafa ramadhan" data-nis="16945" data-gender="L" style="--i: 5">
+            <div class="agent__photo">
+              <img src="assets/img/siswa/16945.svg" alt="Foto Rafa Ramadhan" loading="lazy">
+              <span class="agent__no">#30</span>
+              <span class="agent__gender agent__gender--l">L</span>
+            </div>
+            <div class="agent__info">
+              <p class="agent__unit">UNIT HUNTER-30</p>
+              <h3 class="agent__name">Rafa Ramadhan</h3>
+              <dl class="agent__data">
+                <div class="agent__row">
+                  <dt>NIS</dt>
+                  <dd>16945</dd>
+                </div>
+                <div class="agent__row">
+                  <dt>Gender</dt>
+                  <dd>Laki-laki</dd>
+                </div>
+              </dl>
+              <p class="agent__status">
+                <span class="agent__led"></span>
+                ON DUTY
+              </p>
+            </div>
+          </article>
+          <article class="agent reveal" data-name="revan junior" data-nis="16946" data-gender="L" style="--i: 0">
+            <div class="agent__photo">
+              <img src="assets/img/siswa/16946.svg" alt="Foto Revan Junior" loading="lazy">
+              <span class="agent__no">#31</span>
+              <span class="agent__gender agent__gender--l">L</span>
+            </div>
+            <div class="agent__info">
+              <p class="agent__unit">UNIT ION-31</p>
+              <h3 class="agent__name">Revan Junior</h3>
+              <dl class="agent__data">
+                <div class="agent__row">
+                  <dt>NIS</dt>
+                  <dd>16946</dd>
+                </div>
+                <div class="agent__row">
+                  <dt>Gender</dt>
+                  <dd>Laki-laki</dd>
+                </div>
+              </dl>
+              <p class="agent__status">
+                <span class="agent__led"></span>
+                ON DUTY
+              </p>
+            </div>
+          </article>
+          <article class="agent reveal" data-name="via lestari" data-nis="16947" data-gender="P" style="--i: 1">
+            <div class="agent__photo">
+              <img src="assets/img/siswa/16947.svg" alt="Foto Via Lestari" loading="lazy">
+              <span class="agent__no">#32</span>
+              <span class="agent__gender agent__gender--p">P</span>
+            </div>
+            <div class="agent__info">
+              <p class="agent__unit">UNIT JOLT-32</p>
+              <h3 class="agent__name">Via Lestari</h3>
+              <dl class="agent__data">
+                <div class="agent__row">
+                  <dt>NIS</dt>
+                  <dd>16947</dd>
+                </div>
+                <div class="agent__row">
+                  <dt>Gender</dt>
+                  <dd>Perempuan</dd>
+                </div>
+              </dl>
+              <p class="agent__status">
+                <span class="agent__led"></span>
+                ON DUTY
+              </p>
+            </div>
+          </article>
+          <article class="agent reveal" data-name="zulia putri" data-nis="16948" data-gender="P" style="--i: 2">
+            <div class="agent__photo">
+              <img src="assets/img/siswa/16948.svg" alt="Foto Zulia Putri" loading="lazy">
+              <span class="agent__no">#33</span>
+              <span class="agent__gender agent__gender--p">P</span>
+            </div>
+            <div class="agent__info">
+              <p class="agent__unit">UNIT KILO-33</p>
+              <h3 class="agent__name">Zulia Putri</h3>
+              <dl class="agent__data">
+                <div class="agent__row">
+                  <dt>NIS</dt>
+                  <dd>16948</dd>
+                </div>
+                <div class="agent__row">
+                  <dt>Gender</dt>
+                  <dd>Perempuan</dd>
+                </div>
+              </dl>
+              <p class="agent__status">
+                <span class="agent__led"></span>
+                ON DUTY
+              </p>
+            </div>
+          </article>
+        </div>
+        <p class="members__empty" id="memberEmpty">Berkas tidak ditemukan. Agen mungkin sedang menyamar.</p>
+      </div>
+    </section>
+
+    <div class="tape tape--reverse" aria-hidden="true">
+      <div class="tape__track">
+        <span>POLICE LINE // DO NOT CROSS // LIVE CODING IN PROGRESS // NEO SAMPIT // </span>
+        <span>POLICE LINE // DO NOT CROSS // LIVE CODING IN PROGRESS // NEO SAMPIT // </span>
+        <span>POLICE LINE // DO NOT CROSS // LIVE CODING IN PROGRESS // NEO SAMPIT // </span>
+        <span>POLICE LINE // DO NOT CROSS // LIVE CODING IN PROGRESS // NEO SAMPIT // </span>
+      </div>
+    </div>
+
+    <section class="section live" id="live-coding">
+      <div class="container container--wide">
+        <header class="section__head reveal">
+          <p class="section__tag">// BERKAS 04</p>
+          <h2 class="section__title">Live Coding</h2>
+          <p class="section__lead">Saksikan agen XI RPL 1 mengetik kode secara langsung seperti mesin ketik jurnalis. Hasilnya langsung tampil di layar sebelah.</p>
+        </header>
+        <div class="ide reveal">
+          <div class="ide__bar">
+            <div class="ide__dots">
+              <span class="ide__dot ide__dot--r"></span>
+              <span class="ide__dot ide__dot--y"></span>
+              <span class="ide__dot ide__dot--g"></span>
+            </div>
+            <div class="ide__tabs" id="ideTabs">
+              <button class="ide__tab is-active" type="button" data-file="0">laporan.html</button>
+              <button class="ide__tab" type="button" data-file="1">sirene.html</button>
+              <button class="ide__tab" type="button" data-file="2">kasus.html</button>
+            </div>
+            <div class="ide__controls">
+              <button class="ide__btn" id="ideSound" type="button" aria-pressed="false">Suara: OFF</button>
+              <button class="ide__btn" id="ideSpeed" type="button">Kecepatan: 1x</button>
+              <button class="ide__btn" id="idePause" type="button">Jeda</button>
+              <button class="ide__btn ide__btn--accent" id="ideRestart" type="button">Ulangi</button>
+            </div>
+          </div>
+          <div class="ide__body">
+            <div class="ide__editor">
+              <div class="ide__gutter" id="ideGutter">1</div>
+              <pre class="ide__code"><code id="ideCode"></code><span class="caret caret--block"></span></pre>
+            </div>
+            <div class="ide__preview">
+              <div class="ide__preview-bar">
+                <span class="ide__preview-led"></span>
+                <span class="ide__preview-url">http://neo-sampit.local/<span id="ideUrl">laporan.html</span></span>
+              </div>
+              <iframe class="ide__frame" id="ideFrame" title="Hasil live coding" sandbox="allow-same-origin"></iframe>
+            </div>
+          </div>
+          <div class="ide__status">
+            <span class="ide__status-item ide__status-item--mode" id="ideMode">MENGETIK</span>
+            <span class="ide__status-item">UTF-8</span>
+            <span class="ide__status-item">HTML + CSS</span>
+            <span class="ide__status-item" id="idePos">Ln 1, Col 1</span>
+            <span class="ide__status-item ide__status-item--right" id="ideChars">0 karakter</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section news" id="berita">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="section__tag">// BERKAS 05</p>
+          <h2 class="section__title">Kabar Kota</h2>
+          <p class="section__lead">Laporan terbaru dari jurnalis lapangan, diketik langsung dari mesin ketik tua di tengah hujan neon.</p>
+        </header>
+        <article class="paper reveal" id="paper">
+          <header class="paper__head">
+            <p class="paper__meta">
+              <span>EDISI MALAM</span>
+              <span>NEO SAMPIT</span>
+              <span id="paperDate">2026</span>
+            </p>
+            <h3 class="paper__name">The Neon Times</h3>
+            <p class="paper__sub">Suara Kota Yang Tak Pernah Tidur</p>
+          </header>
+          <div class="paper__body">
+            <h4 class="paper__headline">
+              <span id="paperHeadline"></span>
+            </h4>
+            <div class="paper__cols">
+              <p class="paper__text" id="paperText"></p>
+              <aside class="paper__side">
+                <p class="paper__side-title">LAPORAN SINGKAT</p>
+                <ul class="paper__side-list" id="paperList"></ul>
+              </aside>
+            </div>
+          </div>
+          <span class="paper__stamp">RAHASIA</span>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <p class="footer__logo">&lt;XI.RPL1 /&gt;</p>
+          <p class="footer__desc">Neo Sampit Cyber Division. Unit Rekayasa Perangkat Lunak SMK Negeri 1 Sampit, Tahun Ajaran 2026/2027.</p>
+        </div>
+        <div class="footer__col">
+          <p class="footer__title">Navigasi</p>
+          <a class="footer__link" href="#profil">Profil</a>
+          <a class="footer__link" href="#wali-kelas">Wali Kelas</a>
+          <a class="footer__link" href="#anggota">Anggota</a>
+          <a class="footer__link" href="#live-coding">Live Coding</a>
+        </div>
+        <div class="footer__col">
+          <p class="footer__title">Markas</p>
+          <p class="footer__text">SMK Negeri 1 Sampit</p>
+          <p class="footer__text">Sampit, Kalimantan Tengah</p>
+          <p class="footer__text">Frekuensi: 104.RPL</p>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 XI RPL 1 // SMKN 1 Sampit</p>
+        <p class="footer__signal">
+          <span class="footer__led"></span>
+          SEMUA SISTEM NORMAL
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/rain.js"></script>
+  <script src="assets/js/boot.js"></script>
+  <script src="assets/js/typewriter.js"></script>
+  <script src="assets/js/live-coding.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,403 @@
+.city {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.city__sky {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 70% 0%, rgba(122, 28, 255, 0.35), transparent 70%),
+    radial-gradient(ellipse 60% 40% at 15% 20%, rgba(255, 43, 214, 0.18), transparent 70%),
+    linear-gradient(180deg, #030409 0%, #0a0820 45%, #170a2e 70%, #2a0b33 100%);
+}
+
+.city__moon {
+  position: absolute;
+  top: 9%;
+  right: 14%;
+  width: clamp(80px, 10vw, 150px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #ffd6f5, #ff2bd6 55%, #7a1cff 100%);
+  opacity: 0.55;
+  filter: blur(1px);
+  box-shadow: 0 0 80px rgba(255, 43, 214, 0.55), 0 0 200px rgba(122, 28, 255, 0.4);
+}
+
+.city__layer {
+  position: absolute;
+  left: -5%;
+  right: -5%;
+  bottom: 0;
+  background-repeat: repeat-x;
+  background-position: bottom center;
+  background-size: auto 100%;
+  will-change: transform;
+}
+
+.city__layer--far {
+  height: 72vh;
+  background-image: url("../img/kota/skyline-jauh.svg");
+  opacity: 0.75;
+  filter: blur(1.2px);
+  transform: translate3d(0, var(--p-far, 0), 0);
+}
+
+.city__layer--mid {
+  height: 58vh;
+  background-image: url("../img/kota/skyline-tengah.svg");
+  opacity: 0.92;
+  transform: translate3d(0, var(--p-mid, 0), 0);
+}
+
+.city__layer--near {
+  height: 36vh;
+  background-image: url("../img/kota/skyline-dekat.svg");
+  transform: translate3d(0, var(--p-near, 0), 0);
+}
+
+.city__fog {
+  position: absolute;
+  left: -20%;
+  right: -20%;
+  height: 40vh;
+  background: radial-gradient(ellipse at center, rgba(160, 120, 255, 0.18), transparent 70%);
+  filter: blur(20px);
+  animation: fogDrift 30s ease-in-out infinite alternate;
+}
+
+.city__fog--1 {
+  bottom: 30vh;
+}
+
+.city__fog--2 {
+  bottom: -10vh;
+  background: radial-gradient(ellipse at center, rgba(0, 240, 255, 0.12), transparent 70%);
+  animation-duration: 22s;
+  animation-direction: alternate-reverse;
+}
+
+.city__beam {
+  position: absolute;
+  bottom: 30vh;
+  width: 6px;
+  height: 120vh;
+  transform-origin: bottom center;
+  background: linear-gradient(0deg, rgba(0, 240, 255, 0.45), transparent 80%);
+  filter: blur(6px);
+  animation: beamSweep 9s ease-in-out infinite alternate;
+}
+
+.city__beam--1 {
+  left: 22%;
+}
+
+.city__beam--2 {
+  left: 68%;
+  background: linear-gradient(0deg, rgba(255, 43, 214, 0.4), transparent 80%);
+  animation-duration: 12s;
+  animation-delay: -4s;
+}
+
+.city__signs {
+  position: absolute;
+  inset: 0;
+  opacity: 0.7;
+}
+
+.sign {
+  position: absolute;
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  padding: 0.25em 0.5em;
+  border: 2px solid currentColor;
+  border-radius: 4px;
+  writing-mode: horizontal-tb;
+  animation: neonFlicker 6s infinite;
+}
+
+.sign--a {
+  bottom: 44vh;
+  left: 8%;
+  font-size: clamp(0.9rem, 1.6vw, 1.6rem);
+  color: var(--magenta);
+  text-shadow: var(--glow-magenta);
+  box-shadow: var(--glow-magenta), inset 0 0 12px rgba(255, 43, 214, 0.4);
+}
+
+.sign--b {
+  bottom: 52vh;
+  right: 4%;
+  font-size: clamp(0.9rem, 1.5vw, 1.5rem);
+  color: var(--cyan);
+  writing-mode: vertical-rl;
+  text-shadow: var(--glow-cyan);
+  box-shadow: var(--glow-cyan), inset 0 0 12px rgba(0, 240, 255, 0.4);
+  animation-delay: -2s;
+}
+
+.sign--c {
+  bottom: 38vh;
+  right: 10%;
+  font-size: clamp(0.7rem, 1.1vw, 1.1rem);
+  color: var(--yellow);
+  text-shadow: 0 0 10px rgba(255, 225, 77, 0.8);
+  box-shadow: 0 0 14px rgba(255, 225, 77, 0.5);
+  animation-delay: -3.5s;
+}
+
+.sign--d {
+  bottom: 22vh;
+  right: 32%;
+  font-size: clamp(0.7rem, 1vw, 1rem);
+  color: var(--police-blue);
+  text-shadow: var(--glow-blue);
+  box-shadow: var(--glow-blue);
+  animation-delay: -1s;
+}
+
+.city__street {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 9vh;
+  background:
+    linear-gradient(180deg, rgba(255, 43, 214, 0.18), transparent 40%),
+    repeating-linear-gradient(90deg, rgba(0, 240, 255, 0.25) 0 2px, transparent 2px 60px),
+    linear-gradient(180deg, #0a0717, #020205);
+  mask-image: linear-gradient(180deg, transparent, #000 40%);
+}
+
+.city__rain {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.city__siren {
+  position: absolute;
+  inset: 0;
+  mix-blend-mode: screen;
+  opacity: 0;
+}
+
+.city__siren--red {
+  background:
+    radial-gradient(ellipse 55% 70% at 0% 100%, rgba(255, 42, 61, 0.55), transparent 70%),
+    radial-gradient(ellipse 40% 50% at 0% 0%, rgba(255, 42, 61, 0.2), transparent 70%);
+  animation: sirenRed var(--siren-speed) infinite;
+}
+
+.city__siren--blue {
+  background:
+    radial-gradient(ellipse 55% 70% at 100% 100%, rgba(47, 107, 255, 0.6), transparent 70%),
+    radial-gradient(ellipse 40% 50% at 100% 0%, rgba(47, 107, 255, 0.22), transparent 70%);
+  animation: sirenBlue var(--siren-speed) infinite;
+}
+
+.city__lightning {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(220, 210, 255, 0.55), rgba(140, 120, 255, 0.15) 50%, transparent 80%);
+  opacity: 0;
+}
+
+.city__lightning.is-flash {
+  animation: lightning 0.9s ease-out;
+}
+
+.city__scanlines {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.025) 0 1px, transparent 1px 3px);
+  mix-blend-mode: overlay;
+}
+
+.city__vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 45%, rgba(0, 0, 0, 0.75) 100%);
+}
+
+.boot {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: var(--space-5);
+  background: #020306;
+  transition: opacity 0.7s var(--ease), visibility 0.7s;
+}
+
+.boot.is-done {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.boot__inner {
+  width: min(560px, 100%);
+}
+
+.boot__brand {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: var(--text-sm);
+  letter-spacing: 0.2em;
+  color: var(--police-red);
+  text-shadow: var(--glow-red);
+  margin-bottom: var(--space-4);
+  animation: bootBlink var(--siren-speed) infinite;
+}
+
+.boot__log {
+  min-height: 9.5em;
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  line-height: 1.6;
+  color: var(--green);
+  white-space: pre-wrap;
+}
+
+.boot__bar {
+  height: 4px;
+  margin-top: var(--space-4);
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.boot__fill {
+  display: block;
+  width: 0;
+  height: 100%;
+  background: linear-gradient(90deg, var(--police-red), var(--police-blue));
+  box-shadow: var(--glow-blue);
+  transition: width 0.25s linear;
+}
+
+.boot__skip {
+  margin-top: var(--space-5);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.15em;
+  color: var(--ink-mute);
+}
+
+.boot__skip:hover {
+  color: var(--cyan);
+}
+
+@keyframes sirenRed {
+  0%,
+  10% {
+    opacity: 1;
+  }
+  20%,
+  25% {
+    opacity: 0.1;
+  }
+  30%,
+  38% {
+    opacity: 0.9;
+  }
+  45%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes sirenBlue {
+  0%,
+  45% {
+    opacity: 0;
+  }
+  50%,
+  60% {
+    opacity: 1;
+  }
+  68%,
+  72% {
+    opacity: 0.1;
+  }
+  78%,
+  88% {
+    opacity: 0.9;
+  }
+  95%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes bootBlink {
+  0%,
+  49% {
+    color: var(--police-red);
+    text-shadow: var(--glow-red);
+  }
+  50%,
+  100% {
+    color: var(--police-blue);
+    text-shadow: var(--glow-blue);
+  }
+}
+
+@keyframes lightning {
+  0% {
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+  }
+  14% {
+    opacity: 0.2;
+  }
+  22% {
+    opacity: 0.85;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fogDrift {
+  from {
+    transform: translateX(-6%);
+  }
+  to {
+    transform: translateX(6%);
+  }
+}
+
+@keyframes beamSweep {
+  from {
+    transform: rotate(-22deg);
+  }
+  to {
+    transform: rotate(22deg);
+  }
+}
+
+@keyframes neonFlicker {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    opacity: 1;
+  }
+  20%,
+  24%,
+  55% {
+    opacity: 0.25;
+  }
+}
